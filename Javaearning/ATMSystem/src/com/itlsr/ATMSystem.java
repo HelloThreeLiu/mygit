@@ -1,4 +1,6 @@
-package com.itlsr.day09;
+package com.itlsr;
+
+import com.itlsr.Account;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -88,7 +90,7 @@ public class ATMSystem {
                     }
                 }
             } else {
-                System.out.println("对不起，不存在改卡号的账户！");
+                System.out.println("对不起，不存在该卡号的账户！");
             }
         }
     }
