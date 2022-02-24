@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/StudentManageSystem/StudentManageSystem.iml" filepath="$PROJECT_DIR$/StudentManageSystem/StudentManageSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-lambda-app/api-lambda-app.iml" filepath="$PROJECT_DIR$/api-lambda-app/api-lambda-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/collection-app/collection-app.iml" filepath="$PROJECT_DIR$/collection-app/collection-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collection-map-app2/collection-map-app2.iml" filepath="$PROJECT_DIR$/collection-map-app2/collection-map-app2.iml" />
       <module fileurl="file://$PROJECT_DIR$/movie-buy-app/movie-buy-app.iml" filepath="$PROJECT_DIR$/movie-buy-app/movie-buy-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-app1/oop-app1.iml" filepath="$PROJECT_DIR$/oop-app1/oop-app1.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-app2/oop-app2.iml" filepath="$PROJECT_DIR$/oop-app2/oop-app2.iml" />
