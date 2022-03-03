@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/oop-app2/oop-app2.iml" filepath="$PROJECT_DIR$/oop-app2/oop-app2.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-app3/oop-app3.iml" filepath="$PROJECT_DIR$/oop-app3/oop-app3.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream-exception-log-app/stream-exception-log-app.iml" filepath="$PROJECT_DIR$/stream-exception-log-app/stream-exception-log-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread-app/thread-app.iml" filepath="$PROJECT_DIR$/thread-app/thread-app.iml" />
     </modules>
   </component>
 </project>
