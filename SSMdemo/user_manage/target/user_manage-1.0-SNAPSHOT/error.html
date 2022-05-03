@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>没有权限，请先登录!<span style="color: red" id="seconds">3</span>秒后跳转到登录页面!或者<a href="login.html">点击跳转</a></h1>
+</body>
+<script>
+
+    let seconds=3;
+    setInterval(function (){
+        if(seconds>0){
+            seconds--;
+            document.getElementById("seconds").innerHTML=seconds;
+        }else {
+            location.href="login.html";
+        }
+    },1000);
+
+</script>
+</html>

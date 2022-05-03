@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+<mapper namespace="com.whpu.mapper.UserMapper">
+
+    &lt;!&ndash;sql语句抽取&ndash;&gt;
+    <sql id="selectUser">select *from user</sql>
+    <select id="findAll" resultType="user">
+        select * from user
+    </select>
+
+    <insert id="save" parameterType="com.whpu.domain.User">
+        insert into user value(#{id},#{username},#{password})
+    </insert>
+    
+    <update id="update" parameterType="com.whpu.domain.User">
+        update user set username=#{username},password=#{password} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from user where id=#{id}
+    </delete>
+    
+    <select id="findByCondition" parameterType="user" resultType="user">
+        /*select * from user where id=#{id} and username=#{username} and password=#{password}*/
+        <include refid="selectUser"></include>
+        <where>
+            <if test="id!=0">
+                and id=#{id}
+            </if>
+            <if test="username!=null">
+                and username=#{username}
+            </if>
+            <if test="password!=null">
+                and password=#{password}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByIds" parameterType="list" resultType="user">
+        <include refid="selectUser"></include>
+        <where>
+            <foreach collection="list" open="id in(" close=")" item="id" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+</mapper>-->

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录页面</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+
+    <div id="mydiv" class="container text-center">
+        <form class="form-signin" >
+            <h2 class="form-signin-heading">登录页面</h2>
+            <input type="text"  v-model="loginUser.phone" class="form-control" placeholder="手机号" required autofocus>
+            <br>
+            <div class="input-group">
+                <input type="text"  v-model="loginUser.code" class="form-control" placeholder="请输入验证码" required>
+                <span class="input-group-btn">
+                    <button id="btnMessage" class="form-control btn btn-default"  style="margin-bottom: 10px" @click="sendMessage"  v-html="btnMessage" type="button"></button>
+                </span>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="button" @click="login">登录</button>
+        </form>
+    </div>
+<script>
+   let myVue= new Vue({
+        el:"#mydiv",
+        data:{
+            loginUser:{
+                phone:"",
+                code:""
+            },
+            btnMessage:"获取验证码"
+        },
+        methods:{
+            //登录功能
+            login:function (){
+               axios.post("user/login",this.loginUser)
+               .then(function (response) {
+                    if (response.data.code==200){
+                        //登录成功
+                        if(response.data.result.isNew){
+                            //新添加用户
+                            alert("新用户，请补全资料");
+                            location.href="index.html"
+                        }else{
+                            //已有用户
+                            location.href="index.html"
+                        }
+                    }else {
+                        //登录失败
+                        alert(response.data.result.message);
+                    }
+               });
+            },
+            //发送短信
+            sendMessage:function (){
+                axios.post("user/sendMessage",this.loginUser)
+                .then( (response)=>{
+
+                    $("#btnMessage").attr("disabled","disabled");
+
+                    let seconds=60;
+                    let id =setInterval(function (){
+                        if(seconds>0){
+                            seconds--;
+                            myVue.btnMessage=seconds+"s后重新发送";
+                        }else{
+                            clearInterval(id);
+                            $("#btnMessage").removeAttr("disabled");
+                            myVue.btnMessage="重新获取验证码";
+                        }
+
+                    },1000);
+                });
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
